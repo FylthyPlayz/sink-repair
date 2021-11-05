@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector("#container")
 const applicationState = {
-    requests: []
+    requests: [],
+    plumbers: []
 }
 
 
@@ -45,4 +46,8 @@ export const deleteRequest = (id) => {
                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
+}
+
+export const getPlumbers = () => {
+    return applicationState.plumbers.map(plumber => ({ ...plumber }))
 }
